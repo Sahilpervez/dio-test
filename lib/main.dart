@@ -98,8 +98,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         "https://lh3.googleusercontent.com/a/ACg8ocKSQjmiJBNYqvrfieiwXKjnwuW72EFmW2WjsbLVf3h7=s100"
                   },
                   options: Options(
+                    contentType: "application/json; charset=UTF-8",
                     headers: {
+                      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
                       'Content-type': 'application/json; charset=UTF-8',
+                      'Access-Control-Allow-Origin' : '*',
+                      "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE, HEAD",
                     },
                   ),
                 );
