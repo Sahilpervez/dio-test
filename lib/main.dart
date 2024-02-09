@@ -97,6 +97,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     "profilePic":
                         "https://lh3.googleusercontent.com/a/ACg8ocKSQjmiJBNYqvrfieiwXKjnwuW72EFmW2WjsbLVf3h7=s100"
                   },
+                  options: Options(
+                    headers: {
+                      'Content-type': 'application/json; charset=UTF-8',
+                    },
+                  ),
                 );
                 setState(() {
                   resName = res.data['user']['name'];
