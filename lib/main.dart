@@ -89,26 +89,12 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () async {
                 isLoading = true;
                 resName = "";
-                final res = await dio.post(
-                  '$host/api/signup',
-                  data: {
-                    "name": "Sahilpervez Alam",
-                    "email": "work.alamsahil@gmail.com",
-                    "profilePic":
-                        "https://lh3.googleusercontent.com/a/ACg8ocKSQjmiJBNYqvrfieiwXKjnwuW72EFmW2WjsbLVf3h7=s100"
-                  },
-                  options: Options(
-                    contentType: "application/json; charset=UTF-8",
-                    headers: {
-                      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
-                      'Content-type': 'application/json; charset=UTF-8',
-                      'Access-Control-Allow-Origin' : '*',
-                      "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE, HEAD",
-                    },
-                  ),
+                final res = await dio.get(
+                  '$host/',
                 );
+                // print(res.data['data']);
                 setState(() {
-                  resName = res.data['user']['name'];
+                  resName = res.data['data'];
                 });
                 isLoading = false;
               },
